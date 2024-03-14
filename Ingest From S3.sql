@@ -1,10 +1,10 @@
 -- Databricks notebook source
 CREATE OR REFRESH STREAMING TABLE
-  makubi.testing.sthree_ingest
+  sthree_ingest
 AS SELECT
   *
 FROM
   STREAM read_files(
-    'db_s3_external_databricks-s3-ingest-a3766',
+    's3://cengage-demo/',
     format => 'CSV'
   )
